@@ -1,6 +1,6 @@
-/* ▪* Montero Barraza Alvaro David*
- 1BM1▪* Ingenieria en IA ▪* 
- 27 de agosto de 2021 ▪*/
+/* ▪* 
+ * Ingenieria en IA ▪* 
+  ▪*/
  #include<stdio.h>/*   []  \n */
  #include<stdlib.h>
  #include<string.h>
