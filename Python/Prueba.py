@@ -1,7 +1,6 @@
 range=1,2,3,4,5,6,7
-malloc=input("Digite un 1 o un 0")
-valor=True
-if (malloc==0):
+mal=int(input("Digite un 1 o un 0"))
+if (mal==0):
     valor=True
 else:
     valor=False
