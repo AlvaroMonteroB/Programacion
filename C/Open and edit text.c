@@ -5,7 +5,7 @@
  #include<stdlib.h>
  #include<string.h>
 
- 
+ //Este programa escribe y modifica un archivo de texto
  int cadenas,banderilla=0,num;
  
 typedef struct{
