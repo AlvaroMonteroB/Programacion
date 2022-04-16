@@ -4,23 +4,26 @@ void setup(){
     Serial.begin(115200);
 
 }
-int cont;
-char msg[8],conf[13],msg2[8];
+int cont=0;
+String msg,conf,msg2;
+
 void loop(){
 if (Serial.available()>0)
 {   
-    for (int i = 0; i < 20; i++)
+    while (Serial.available()>0)
     {
-        msg[i]=char(Serial.read());
+        msg+=char(Serial.read());
     }
-    for (int i = 0; i < 13; i++)
+    delay(18);
+    while (Serial.available()>0)
     {
-        conf[i]=char(Serial.read());
+        conf+=char(Serial.read());
     }
-    for (int i = 0; i < 8; i++)
-    {
-        msg2[i]=char(Serial.read());
+    while(Serial.available()>0){
+        msg2+=char(Serial.read());
     }
+    
+
     for (int i = 0; i < 8; i++)
     {
         if (msg[i]==msg2[i])
