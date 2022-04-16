@@ -1,7 +1,7 @@
-#include <Arduino.h>
+#include<Arduino.h>
 #include<ESP8266WiFi.h>
 const char *ssid="Montero";
-const char *password="Montero";
+const char *password="Montero1";
 void setup() {
   Serial.begin(115200);
   delay(10);
@@ -21,5 +21,6 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  Serial.print("Todo ok");
+  delay(1000);
 }
