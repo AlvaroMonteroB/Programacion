@@ -1,19 +1,16 @@
 #include <ESP8266WiFi.h>
 
-
+//Este esp mandará un mensaje en comunicacion serial
 void setup(void) {
  Serial.begin(115200);
-
 }
 
 void loop(void) {
-  char message[8]={'p','r','o','g','r','a','m','a'};
- Serial.print(message);
- delay(20);
- Serial.print("confirmacion");
- delay(20);
- Serial.print(message);
- delay(10000);
+ 
+Serial.print("LedEn_");
+delay(2000);
+Serial.print("LedOff_");
+delay(2000);
   
   
 

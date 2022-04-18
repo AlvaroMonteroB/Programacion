@@ -1,41 +1,47 @@
 #include<Arduino.h>
 #include<ESP8266WiFi.h>
+int cont=0;
+String msg;
+bool complete;
+//Este esp recibirá un mensaje serial y procederá a darnos aviso
+void SerialEvent();
 void setup(){
     Serial.begin(115200);
-
+    pinMode(2,OUTPUT);
+    digitalWrite(2,LOW);
 }
-int cont=0;
-String msg,conf,msg2;
+
 
 void loop(){
-if (Serial.available()>0)
-{   
-    while (Serial.available()>0)
+    if (Serial.available())
     {
-        msg+=char(Serial.read());
-    }
-    delay(18);
-    while (Serial.available()>0)
-    {
-        conf+=char(Serial.read());
-    }
-    while(Serial.available()>0){
-        msg2+=char(Serial.read());
+        SerialEvent();
     }
     
-
-    for (int i = 0; i < 8; i++)
-    {
-        if (msg[i]==msg2[i])
+    if(complete){
+        if (msg=="LedEn_")
         {
-            cont++;
+            digitalWrite(2,HIGH);
+        }else if(msg=="LedOff_"){
+            digitalWrite(2,LOW);
         }
-        
+        msg="";
+        complete=false;
     }
-    cont==8?Serial.print("Mensaje exitoso"):Serial.print("No se pudo leer el mensaje");
-    
-    
-}
 
    
+}
+
+void SerialEvent(){
+    char inChar;
+    while(Serial.available()){
+        inChar=Serial.read();
+        msg+=inChar;
+        if (inChar=='_')
+        {
+            complete=true;
+        }
+    Serial.print("Message read");
+    }
+    
 }
