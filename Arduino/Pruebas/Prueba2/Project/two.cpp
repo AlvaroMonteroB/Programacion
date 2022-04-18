@@ -1,7 +1,7 @@
 #include<Arduino.h>
 #include<ESP8266WiFi.h>
 int cont=0;
-String msg;
+String msg="";
 bool complete;
 //Este esp recibirá un mensaje serial y procederá a darnos aviso
 void SerialEvent();
@@ -9,14 +9,11 @@ void setup(){
     Serial.begin(115200);
     pinMode(2,OUTPUT);
     digitalWrite(2,LOW);
+    msg.reserve(20);
 }
 
 
 void loop(){
-    if (Serial.available())
-    {
-        SerialEvent();
-    }
     
     if(complete){
         if (msg=="LedEn_")
@@ -32,7 +29,7 @@ void loop(){
    
 }
 
-void SerialEvent(){
+void serialEvent(){
     char inChar;
     while(Serial.available()){
         inChar=Serial.read();
