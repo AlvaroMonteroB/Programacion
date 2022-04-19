@@ -1,9 +1,34 @@
 #include <Arduino.h>
-
+String msg;
+bool flag;
+void serialEvent();
 void setup() {
-  // put your setup code here, to run once:
+  pinMode(13,OUTPUT);
+  Serial.begin(115200);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  Serial.print("Mensaje_");
+  if (flag)
+  {
+    if(msg="Recibido_"){
+      digitalWrite(13,HIGH);
+      delay(200);
+      digitalWrite(13,LOW);
+      delay(100);
+    }
+  }
+  
+  
+}
+
+void serialEvent(){
+  char aux;
+  while(Serial.available()){
+    aux=Serial.read();
+    if(Serial.read()=='_'){
+      flag=true;
+    }
+    msg+=aux;
+  }
 }
