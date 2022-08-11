@@ -1,0 +1,32 @@
+{
+	"folders": [
+		{
+			"path": "..\\..\\..\\..\\.."
+		},
+		{
+			"name": "Esp 01 prueba",
+			"path": "..\\..\\..\\..\\..\\..\\..\\..\\Documents\\PlatformIO\\Projects\\Esp 01 prueba"
+		},
+		{
+			"name": "Prueba Esp",
+			"path": "..\\..\\..\\..\\Prueba Esp"
+		},
+		{
+			"name": "Prueba Esp",
+			"path": "..\\..\\..\\..\\Pruebas\\Prueba Esp"
+		},
+		{
+			"name": "Prueba2",
+			"path": "..\\..\\..\\..\\Pruebas\\Prueba2"
+		},
+		{
+			"name": "Esp code",
+			"path": ".."
+		},
+		{
+			"name": "Arduino code",
+			"path": "..\\..\\Arduino code"
+		}
+	],
+	"settings": {}
+}

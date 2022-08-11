@@ -1,9 +1,34 @@
 #include <Arduino.h>
-
+bool flag;
+String msg;
 void setup() {
-  // put your setup code here, to run once:
+  Serial.begin(115200);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  if (flag)
+  {
+    if (msg=="Mensaje_")
+    {
+      delay(20);
+      Serial.print("Recibido_");
+    }
+    delay(2000);
+  }
+  
+}
+
+void serialEvent(){
+  char buffer;
+  while (Serial.available())
+  {
+   buffer=Serial.read();
+   msg+=buffer;
+   if (buffer=='_')
+   {
+     flag=true;
+   }
+    
+  }
+  
 }

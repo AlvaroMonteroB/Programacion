@@ -13,11 +13,12 @@ void loop() {
   {
     if(msg="Recibido_"){
       digitalWrite(13,HIGH);
-      delay(200);
+      delay(400);
       digitalWrite(13,LOW);
-      delay(100);
+      delay(1800);
     }
   }
+
   
   
 }
